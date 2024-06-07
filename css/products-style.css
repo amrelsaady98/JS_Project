@@ -65,9 +65,13 @@
   height: 80%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 60vh);
+  /*grid-auto-columns: minmax(0.25fr, 100px);*/
+  /*grid-template-columns: repeat(auto-fill, minmax(200px, 400px));*/
+  /*grid-auto-rows:minmax(0.25fr, 100px);*/
   grid-column-gap: 12px;
   grid-row-gap: 12px;
-  grid-template-rows: repeat(5, 60vh)
+
 }
 
 .product-card {
