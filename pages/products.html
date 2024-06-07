@@ -2,9 +2,185 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/amazon-ember');
+  </style>
+  <link href="../css/reset.css" rel="stylesheet"/>
+  <link href="../css/nav-style.css" rel="stylesheet"/>
+  <link href="../css/products-style.css" rel="stylesheet"/>
+
+  <title>Products</title>
 </head>
 <body>
-$END$
+  <!--  Start Nav Bar-->
+  <section id="nav-global">
+    <div id="nav-top">
+      <div class="" id="nav-top-left-group">
+        <div class="hover-border" id="logo-container">
+          <a href="">
+            <img alt="logo" class="logo" src="../img/logo.png">
+            <span>.eg</span>
+          </a>
+        </div>
+        <a href="">
+          <div class="hover-border" id="delivery-container">
+            <img alt="logo" class="logo" src="../img/location-icon.png">
+            <div>
+              <span>Deliver To<br></span>
+              <span>Egypt</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div id="nav-fill">
+        <div id="nav-search-container">
+          <div id="nav-search-left">
+            <button class="hover-mask" id="nav-search-category-btn">All</button>
+          </div>
+          <div id="nav-search-fill">
+            <input id="nav-search-input" type="text"/>
+          </div>
+          <div class="hover-mask" id="nav-search-right">
+            <img alt="" src="../img/search-icon.png">
+          </div>
+        </div>
+      </div>
+      <div id="nav-top-right-group">
+        <a href="">
+          <div id="sign-in-container" class="hover-border">
+            <span>Hello, Sign in </br></span>
+            <span>Account and Lists</span>
+          </div>
+        </a>
+        <a href="">
+          <div class="hover-border" id="cart-container">
+            <img alt="cart" class="logo" src="../img/cart-icon.png">
+            <span>5</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+    <div id="nav-bottom">
+      <div id="nav-bottom-left">
+        <a href="" class="nav-a">
+          Mobile Phones
+        </a>
+        <a href="" class="nav-a">
+          Electronics
+        </a>
+        <a href="" class="nav-a">
+          Fashion
+        </a>
+        <a href="" class="nav-a">
+          Video Games
+        </a>
+        <a href="" class="nav-a">
+          Home
+        </a>
+        <a href="" class="nav-a">
+          Grocery
+        </a>
+
+      </div>
+      <div id="nav-bottom-right">
+        <img src="../img/nav-bottom-ad.jpg" style="height: 100%">
+      </div>
+    </div>
+
+  </section>
+  <!--End Nav Bar-->
+
+  <!--===========================================================================-->
+
+  <!--Start body section-->
+
+  <section id="body-section">
+
+<!--    Start Filter Side Bar-->
+    <div id="side-bar">
+      <h1>Filters</h1>
+      <div class="brand-list">
+        <h3>Brands</h3>
+        <label><input type="checkbox" name="brand" value="SAMSUNG"> SAMSUNG</label>
+        <label><input type="checkbox" name="brand" value="Spigen"> Spigen</label>
+        <label><input type="checkbox" name="brand" value="NINKI"> NINKI</label>
+        <label><input type="checkbox" name="brand" value="DL3 Mobilak"> DL3 Mobilak</label>
+        <label><input type="checkbox" name="brand" value="Ringke"> Ringke</label>
+        <label><input type="checkbox" name="brand" value="Nillkin"> Nillkin</label>
+        <label><input type="checkbox" name="brand" value="GOLDEN MASK"> GOLDEN MASK</label>
+      </div>
+    </div>
+
+    <!--    End Filter Side Bar-->
+
+<!--    Start Product Grid Header-->
+    <div class="titleContainer" style="">
+      <span>Amazon Fashion </span>
+      <span>1500 - Result</span>
+    </div>
+<!--    End Product Grid Header-->
+
+<!--    Start Product Grid Section-->
+    <div id="products-grid">
+      <div class="product-card ">
+        <img src="../img/product-img.jpg" alt="product img" class="product-img" style="">
+        <div style="padding: 4px" class="product-card-content">
+          <span class="product-card-description">LPUK CPU Cooling Fan compatible with DELL Inspiron 15 3521 3537 15R 5521 5537 17 3721 3737 17R 5721 5737 P28F Latitude 3540 p/n: 074X7K 7J14B0 753894-001
+4.0 out of 5 stars 1 </span>
+          <span class="product-card-price">1.600,00$</span>
+          <div class="add-to-cart-button hover-mask">
+            Add to Cart
+          </div>
+        </div>
+      </div>
+      <div class="product-card ">
+        <img src="../img/product-img.jpg" alt="product img" class="product-img" style="">
+        <div style="padding: 4px" class="product-card-content">
+          <span class="product-card-description">LPUK CPU Cooling Fan compatible with DELL Inspiron 15 3521 3537 15R 5521 5537 17 3721 3737 17R 5721 5737 P28F Latitude 3540 p/n: 074X7K 7J14B0 753894-001
+4.0 out of 5 stars 1 </span>
+          <span class="product-card-price">1.600,00$</span>
+          <div class="add-to-cart-button hover-mask">
+            Add to Cart
+          </div>
+        </div>
+      </div>
+      <div class="product-card ">
+        <img src="../img/product-img-2.webp" alt="product img" class="product-img" style="">
+        <div style="padding: 4px" class="product-card-content">
+          <span class="product-card-description">LPUK CPU Cooling Fan compatible with DELL Inspiron 15 3521 3537 15R 5521 5537 17 3721 3737 17R 5721 5737 P28F Latitude 3540 p/n: 074X7K 7J14B0 753894-001
+4.0 out of 5 stars 1 </span>
+          <span class="product-card-price">1.600,00$</span>
+          <div class="add-to-cart-button hover-mask">
+            Add to Cart
+          </div>
+        </div>
+      </div>
+      <div class="product-card ">
+        <img src="../img/product-img.jpg" alt="product img" class="product-img" style="">
+        <div style="padding: 4px" class="product-card-content">
+          <span class="product-card-description">LPUK CPU Cooling Fan compatible with DELL Inspiron 15 3521 3537 15R 5521 5537 17 3721 3737 17R 5721 5737 P28F Latitude 3540 p/n: 074X7K 7J14B0 753894-001
+4.0 out of 5 stars 1 </span>
+          <span class="product-card-price">1.600,00$</span>
+          <div class="add-to-cart-button hover-mask">
+            Add to Cart
+          </div>
+        </div>
+      </div>
+      <div class="product-card ">
+        <img src="../img/product-img.jpg" alt="product img" class="product-img" style="">
+        <div style="padding: 4px" class="product-card-content">
+          <span class="product-card-description">LPUK CPU Cooling Fan compatible with DELL Inspiron 15 3521 3537 15R 5521 5537 17 3721 3737 17R 5721 5737 P28F Latitude 3540 p/n: 074X7K 7J14B0 753894-001
+4.0 out of 5 stars 1 </span>
+          <span class="product-card-price">1.600,00$</span>
+          <div class="add-to-cart-button hover-mask">
+            Add to Cart
+          </div>
+        </div>
+      </div>
+    </div>
+<!--    Start Product Grid Section-->
+  </section>
+  <!--End Body section-->
 </body>
 </html>
