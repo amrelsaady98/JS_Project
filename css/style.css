@@ -84,6 +84,7 @@ i#next {
 }
 .categoryCard img{
   margin: 24px 0;
+  width: 100%;
 }
 .categoryCard span:last-child{
   font-size: 1.2em;
