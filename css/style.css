@@ -69,7 +69,7 @@ i#next {
 .categoryCard{
   width: 100%;
   height: 100%;
-  padding: 24px;
+  padding: 24px 12px;
   box-sizing: border-box;
   background-color: white;
   display: flex;
@@ -81,14 +81,21 @@ i#next {
 .categoryCard span:first-child{
   font-size: 1.5em;
   font-weight: bold;
+  margin: 12px 0;
+  box-sizing: border-box;
 }
 .categoryCard img{
-  margin: 24px 0;
+  margin: 12px 0;
   width: 100%;
+  height: 75%;
+  object-fit: cover;
+  box-sizing: border-box;
 }
 .categoryCard span:last-child{
   font-size: 1.2em;
   color: #007185;
+  margin: 12px 0;
+  box-sizing: border-box;
 }
 :where( .categoryCard:hover).categoryCard span:last-child{
    color: #e78c04;
