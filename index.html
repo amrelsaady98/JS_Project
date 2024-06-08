@@ -283,10 +283,16 @@
   // Define function to start automatic image slider
   const autoSlide = () => {
     // Start the slideshow by calling slideImage() every 2 seconds
-    intervalId = setInterval(() => slideImage(++imageIndex), 2000);
+    intervalId = setInterval(() => {
+      slideImage(++imageIndex)
+      if(!(imageIndex < images.length)){
+        imageIndex = 0;
+      }
+    }, 3500);
+
   };
   // Call autoSlide function on page load
-  // autoSlide();
+  autoSlide();
 
   // A function that updates the carousel display to show the specified image
   const slideImage = () => {
