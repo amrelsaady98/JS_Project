@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../Css_design/categories.css">
+        <link rel="stylesheet" href="../Css_design/Cart.css">
+    </head>
+    <body onload="displayCart()">
+        <div id="head">
+            <input type="search" id="srch">
+            <img src="../images/amazonbg.png" width="25%" height="98%" id="mgg">
+        </div>
+        <div id="navbar">
+            <a href="../Pages/Allproduct.html"> All</a>
+            <a href="../Pages/oneProduct.html?categoryName=electronics" onclick="getProductData('electronics')">Electronics</a>
+            <a href="../Pages/oneProduct.html?categoryName=jewelery" onclick="getProductData('jewelery')">Jewelery</a>
+            <a href="../Pages/oneProduct.html?categoryName=men's clothing" onclick="getProductData('men\'s clothing')">Men's Clothing</a>
+            <a href="../Pages/oneProduct.html?categoryName=women's clothing" onclick="getProductData('women\'s clothing')">Women Clothing</a>
+            <a href="../Pages/cart.html"  onclick="displayCart()">Cart</a>
+        </div>
+        <div id="right">
+            <h2>spend less Smile more</h>
+                <p> All you need in one place </p>
+                <b>titel</b>
+                <h3>Price 3000 <sup style="color: rgb(30, 30, 30);">EGP</sup></h3>
+                <p>Pay Know and you will get it <div id="tim">in </div></p>
+                <p style="color: darkred; font-size: 18px; font-weight: bold;">Only 2 left in store order soOon</p>
+                
+        </div>
+        <div id="carContent">
+            <h2>your Shoping Cart</h2><br>
+            <br><br>
+            <hr>
+            <div id="cartD">
+            </div>
+            <div>
+                <h3 id="tPric">Total Price:</h3>
+                <button id="clr">Clear Cart</button>
+
+            </div>
+        </div>
+        
+
+        <script src="../JavaScript/cart.js"></script>
+    </body>
+</html>
