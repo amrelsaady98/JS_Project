@@ -1,0 +1,37 @@
+#carContent{
+    width: 100%;
+    height: 100%;
+}
+div>h2{
+    float:right;
+    margin: 10px;
+
+}
+#cartD>div{
+    text-align: center;
+    margin: 10px;
+    font-size: 20px;
+    
+}
+#cartD>div>img{
+    
+    margin: 20px;
+    width: 200px;
+    height: 150px;
+}
+#proamont{
+    border: 2px solid darkgoldenrod;
+    border-radius: 30%;
+    width: 80px;
+    height: 25px;
+}
+
+#clr{
+    background-color: #d52222;
+    color: white;
+    border: none;
+    border-radius: 30%;
+    font-size: 16px;
+    width: 90px;
+    height: 30px;
+}

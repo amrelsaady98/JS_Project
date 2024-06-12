@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/categories.css">
+        <link rel="stylesheet" href="../css/Cart.css">
+      <link rel="stylesheet" href="../css/reset.css">
+      <link rel="stylesheet" href="../css/nav-style.css">
+    </head>
+    <body onload="displayCart()">
+    <!--  Start Nav Bar-->
+    <section id="nav-global">
+      <div id="nav-top">
+        <div class="" id="nav-top-left-group">
+          <div class="hover-border" id="logo-container">
+            <a href="../index.html">
+              <img alt="logo" class="logo" src="../img/logo.png">
+              <span>.eg</span>
+            </a>
+          </div>
+          <a href="">
+            <div class="hover-border" id="delivery-container">
+              <img alt="logo" class="logo" src="../img/location-icon.png">
+              <div>
+                <span>Deliver To<br></span>
+                <span>Egypt</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div id="nav-fill">
+          <div id="nav-search-container">
+            <div id="nav-search-left">
+              <button class="hover-mask" id="nav-search-category-btn">All</button>
+            </div>
+            <div id="nav-search-fill">
+              <input id="nav-search-input" type="text"/>
+            </div>
+            <div class="hover-mask" id="nav-search-right">
+              <img alt="" src="../img/search-icon.png">
+            </div>
+          </div>
+        </div>
+        <div id="nav-top-right-group">
+          <a href="">
+            <div id="sign-in-container" class="hover-border">
+              <span>Hello, Sign in </br></span>
+              <span>Account and Lists</span>
+            </div>
+          </a>
+          <a href="">
+            <div class="hover-border" id="cart-container">
+              <img alt="cart" class="logo" src="../img/cart-icon.png">
+              <span>5</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+      <div id="nav-bottom">
+        <div id="nav-bottom-left">
+
+
+        </div>
+        <div id="nav-bottom-right">
+          <img src="../img/nav-bottom-ad.jpg" style="height: 100%">
+        </div>
+      </div>
+
+    </section>
+    <!--End Nav Bar-->
+        <!--<div id="head">
+            <input type="search" id="srch">
+            <img src="../images/amazonbg.png" width="25%" height="98%" id="mgg">
+        </div>-->
+        <!--<div id="navbar">
+            <a href="../Pages/Allproduct.html"> All</a>
+            <a href="../Pages/oneProduct.html?categoryName=electronics" onclick="getProductData('electronics')">Electronics</a>
+            <a href="../Pages/oneProduct.html?categoryName=jewelery" onclick="getProductData('jewelery')">Jewelery</a>
+            <a href="../Pages/oneProduct.html?categoryName=men's clothing" onclick="getProductData('men\'s clothing')">Men's Clothing</a>
+            <a href="../Pages/oneProduct.html?categoryName=women's clothing" onclick="getProductData('women\'s clothing')">Women Clothing</a>
+            <a href="../Pages/cart.html"  onclick="displayCart()">Cart</a>
+        </div>-->
+        <div id="right">
+            <h2>spend less Smile more</h2>
+                <p> All you need in one place </p>
+                <b>titel</b>
+                <h3>Price 3000 <sup style="color: rgb(30, 30, 30);">EGP</sup></h3>
+                <p>Pay Know and you will get it <div id="tim">in </div></p>
+                <p style="color: darkred; font-size: 18px; font-weight: bold;">Only 2 left in store order soOon</p>
+
+        </div>
+        <div id="carContent">
+            <h2>your Shoping Cart</h2><br>
+            <br><br>
+            <hr>
+            <div id="cartD">
+            </div>
+            <div>
+                <h3 id="tPric">Total Price:</h3>
+                <button id="clr">Clear Cart</button>
+
+            </div>
+        </div>
+
+    <script src="../js/add-to-cart.js"></script>
+<!--    <script src="../js/cart.js"></script>-->
+    <script src="../js/nav_bar.js"></script>
+
+    </body>
+</html>

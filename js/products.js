@@ -99,15 +99,20 @@ function displayProducts(data) {
     addToCardBtn.innerText = "Add to cart";
     addToCardBtn.classList.add("add-to-cart-button");
     addToCardBtn.classList.add("hover-mask");
+    addToCardBtn.addEventListener("click", () => {
+      addToCart(item);
+      // console.log(item);
+    })
     productContentContainer.append(addToCardBtn);
 
     productCard.append(productContentContainer);
     productCard.style.cursor = "pointer";
 
-    productCard.addEventListener('click', () => {
+    /*productCard.addEventListener('click', () => {
       location.assign("../pages/product.html?productId=" + item.id);
-    })
+    })*/
     //TODO : create addToCard(item) function
+
     // function takes item --> to add to local storage
     productsGrid.append(productCard);
   })

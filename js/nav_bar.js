@@ -6,12 +6,13 @@ function loadCategoriesLinks(){
   fetch('https://api.escuelajs.co/api/v1/categories')
     .then(response => response.json())
     .then((data)=>addCategories(data))
-    .catch(error => console.error('Error:', error));
+    .catch(error => console.log('Error:', error));
 }
 
 function addCategories(categories=[]){
   for (let i = 0; i < 10; i++) {
     let newCategory = document.createElement('a');
+    // console.log(categories[i])
     newCategory.classList.add('nav-a');
     newCategory.innerText = categories[i].name;
     newCategory.setAttribute("href", "../pages/products.html?categoryName=" + categories[i].name + "&categoryId=" + categories[i].id);
