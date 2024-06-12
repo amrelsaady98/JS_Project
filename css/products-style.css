@@ -40,6 +40,16 @@
   accent-color: #232f3e;
 }
 
+.price-range a{
+  margin: 4px 0;
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+.price-range a:hover{
+  color: #e78c04;
+}
+
 
 .titleContainer {
   width: calc(100%);

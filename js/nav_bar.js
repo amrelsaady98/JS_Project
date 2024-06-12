@@ -14,10 +14,10 @@ function addCategories(categories=[]){
     let newCategory = document.createElement('a');
     newCategory.classList.add('nav-a');
     newCategory.innerText = categories[i].name;
-    newCategory.setAttribute("href", "./pages/products.html?categoryName=" + categories[i].name + "&categoryId=" + categories[i].id);
+    newCategory.setAttribute("href", "../pages/products.html?categoryName=" + categories[i].name + "&categoryId=" + categories[i].id);
     categoriesLinksContainer.append(newCategory);
 
-    let newCategoryCard = document.createElement('div');
+    /*let newCategoryCard = document.createElement('div');
     let newCategoryCardImage = document.createElement('img');
     let newCategoryCardText = document.createElement('span');
     let newCategoryCardShowMore = document.createElement('span');
@@ -32,7 +32,7 @@ function addCategories(categories=[]){
       window.location.assign( "./pages/products.html?categoryName=" + categories[i].name + "&categoryId=" + categories[i].id);
     })
 
-    categoriesCardsContainer.append(newCategoryCard);
+    categoriesCardsContainer.append(newCategoryCard);*/
 
   }
 
@@ -45,7 +45,7 @@ let searchBtn = document.getElementById('nav-search-right');
 let searchInput = document.getElementById('nav-search-input');
 
 searchBtn.addEventListener('click', function(){
-  window.location .assign(`./pages/products.html?q=${searchInput.value}`);
+  window.location .assign(`../pages/products.html?q=${searchInput.value}`);
 });
 searchInput.addEventListener("keypress",
   (eventHandler) => {

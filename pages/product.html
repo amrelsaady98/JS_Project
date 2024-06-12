@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Document</title>
+  <style>
+    #bottom-section * {
+      margin: 12px;
+    }
+  </style>
+
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/nav-style.css">
+  <link href="../css/style-product.css" rel="stylesheet"/>
+</head>
+<body>
+<!--  Start Nav Bar-->
+<section id="nav-global">
+  <div id="nav-top">
+    <div class="" id="nav-top-left-group">
+      <div class="hover-border" id="logo-container">
+        <a href="">
+          <img alt="logo" class="logo" src="../img/logo.png">
+          <span>.eg</span>
+        </a>
+      </div>
+      <a href="">
+        <div class="hover-border" id="delivery-container">
+          <img alt="logo" class="logo" src="../img/location-icon.png">
+          <div>
+            <span>Deliver To<br></span>
+            <span>Egypt</span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div id="nav-fill">
+      <div id="nav-search-container">
+        <div id="nav-search-left">
+          <button class="hover-mask" id="nav-search-category-btn">All</button>
+        </div>
+        <div id="nav-search-fill">
+          <input id="nav-search-input" type="text"/>
+        </div>
+        <div class="hover-mask" id="nav-search-right">
+          <img alt="" src="../img/search-icon.png">
+        </div>
+      </div>
+    </div>
+    <div id="nav-top-right-group">
+      <a href="">
+        <div id="sign-in-container" class="hover-border">
+          <span>Hello, Sign in </br></span>
+          <span>Account and Lists</span>
+        </div>
+      </a>
+      <a href="">
+        <div class="hover-border" id="cart-container">
+          <img alt="cart" class="logo" src="../img/cart-icon.png">
+          <span>5</span>
+        </div>
+      </a>
+    </div>
+
+  </div>
+  <div id="nav-bottom">
+    <div id="nav-bottom-left">
+
+
+    </div>
+    <div id="nav-bottom-right">
+      <img src="../img/nav-bottom-ad.jpg" style="height: 100%">
+    </div>
+  </div>
+
+</section>
+<!--End Nav Bar-->
+<div class="sec" style="display: flex; flex-direction: row;">
+
+  <img id="productImage" alt="watch" src="../img/category-img.jpg" width="30%">
+
+
+  <div class="content" style="width: 70%; padding: 12px;">
+    <h2 id="productTitle">Lorem ipsum dolor sit amet.</h2>
+    <p id="productDescription" style="display: inline;">Lorem et vel adipisci. Ad nulla debitis accusantium molestiae, iure reprehenderit esse
+      sit quo vitae corporis molestias voluptatum doloribus fuga quos consequuntur culpa nesciunt aut hic illo quasi
+      corrupti iste nihil fugiat! Facilis, quod repellat atque rerum perspiciatis enim voluptas commodi blanditiis sit
+      ea? Aspernatur similique ipsum recusandae tenetur.</p>
+    <a class="read-more" href="#">read more</a><br><br>
+    <hr>
+    <h3 id="productPrice">price 5000</h3>
+    <h2 class="product-stock">in stock</h2>
+  </div>
+
+</div>
+
+
+<section id="bottom-section" style="display: flex; justify-content: center; height: 48px">
+
+  <!-- <select class="product-quantity">
+      <option value="1">quantity:1</option>
+      <option value="2">quantity:2</option>
+      <option value="3">quantity:3</option>
+  </select> -->
+  <!--TODO: Input Type number -->
+  <label for="productCount"> Count </label> <input id="productCount" name="productCount" type="number">
+  <button class="btn-add" id="add-to-cart" name="buy">Add to Cart</button>
+  <br>
+  <button class="btn-product-buy" id="buy-now" name="add">Buy Now</button>
+</section>
+<script>
+  let params = new URLSearchParams( window.location.search);
+  let productId = params.get("productId");
+  let addToCartBtn = document.getElementById("add-to-cart");
+  let buyNowBtn = document.getElementById("buy-now");
+
+  let productImage = document.getElementById("productImage");
+  let productTitle = document.getElementById("productTitle");
+  let productDescription = document.getElementById("productDescription");
+  let productPrice = document.getElementById("productPrice")
+
+
+  let product = [
+    {
+      id: 1,
+      title: "smart watch",
+      price: "50$"
+    },
+    {
+      id: 2,
+      title: "smart watch",
+      price: "50$"
+    },
+    {
+      id: 3,
+      title: "smart watch",
+      price: "50$"
+    },
+    {
+      id: 4,
+      title: "smart watch",
+      price: "50$"
+    }
+  ]
+  console.log(window.location.search)
+  addToCartBtn.addEventListener('click', () => {
+  })
+
+  fetch(`https://api.escuelajs.co/api/v1/products/${productId}`)
+    .then(response => response.json())
+    .then((data) => displayProductData(data))
+  function displayProductData(productData){
+    productImage.setAttribute("src", /*productData.images[0]*/"../img/category-img.jpg");
+    productTitle.innerText = productData.title;
+    productDescription.innerText = productData.description;
+    productPrice.innerText = productData.price + " EGP"
+  }
+
+
+  // function addToCartBtn(id){
+  //     arr.push(id);
+  //     alert(id);
+  //     localStorage.setItem('userCart',id);
+  // }
+
+
+  // load element from api with id --> xhttp javascript
+
+  // addToCaRTbTN --> event :
+  // localStorage.get("key")
+  // transform to json object
+  // appen item with current item to json Obj
+  // transform to string JSON.stringify()
+  // add to local storage
+
+</script>
+<script src="../js/nav_bar.js"></script>
+</body>
+</html>

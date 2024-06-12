@@ -1,5 +1,5 @@
 let urlParams = new URLSearchParams(window.location.search);
-let categoryName, categoryId, searchQuery;
+let categoryName, categoryId, searchQuery, productsParams;
 
 // document elements
 let productsTitle = document.querySelector(".titleContainer span:first-child"); // category or search query
@@ -8,17 +8,32 @@ let productsGrid = document.querySelector("#products-grid");
 let searchBtn = document.getElementById('nav-search-right');
 let searchInput = document.getElementById('nav-search-input');
 
-searchBtn.addEventListener('click', function(){
-  window.location .assign(`products.html?q=${searchInput.value}`);
-})
+let categoryList = new Set();
+let selectedCategoryList = new Set();
+let maxPrice = 0;
+let minPrice = 9999999999;
+
+searchBtn.addEventListener('click', function () {
+  window.location.assign(`products.html?q=${searchInput.value}`);
+});
+searchInput.addEventListener("keypress",
+  (eventHandler) => {
+    if (eventHandler.key === "Enter") {
+      window.location.assign(`products.html?q=${searchInput.value}`);
+    }
+  });
 
 console.log(urlParams.get('q'));
+console.log(urlParams.get('categoryName'));
+console.log(urlParams.get('categoryId'));
 
 if (urlParams.has("q")) {
   searchQuery = urlParams.get("q");
   //TODO: load search results
   searchInput.value = searchQuery;
-  loadCategoryProducts("title=" + searchQuery, displayProducts, (err)=>console.log(err));
+  productsTitle.innerText = "Results for \"" + searchQuery + "\"";
+  productsParams = "title=" + searchQuery;
+
 }
 if (urlParams.has("categoryName")) {
   categoryName = urlParams.get("categoryName");
@@ -26,21 +41,39 @@ if (urlParams.has("categoryName")) {
   //TODO: update title with category name
   productsTitle.innerText = categoryName;
   //TODO: load category's products
-  loadCategoryProducts("categoryId="+categoryId, displayProducts, (err)=>console.log(err));
+  productsParams = "categoryId=" + categoryId;
+
 }
 
+loadCategoryProducts(productsParams, displayProducts, (err) => console.log("error --> " + err)).then(
+  ()=>{
+    console.log("then...");
+    console.log(categoryList);
+    console.log(minPrice);
+    console.log(maxPrice);
+  }
+)
 
-function loadCategoryProducts(params, resolve, rejected) {
+
+async function loadCategoryProducts(params, resolve, rejected) {
   console.log(`https://api.escuelajs.co/api/v1/products/?${params}`);
-  fetch(`https://api.escuelajs.co/api/v1/products/?${params}`)
+  await fetch(`https://api.escuelajs.co/api/v1/products/?${params}`)
     .then(response => response.json())
     .then((data) => resolve(data))
-    .catch(error => rejected());
+    .catch(error => rejected(error));
 }
 
-function displayProducts(data){
+function displayProducts(data) {
   productsSubTitle.innerText = `${data.length} - Products available`;
-  data.map((item)=>{
+
+  data.map((item) => {
+    if(item.price > maxPrice){
+      maxPrice = item.price;
+    }
+    if (item.price < minPrice){
+      minPrice = item.price;
+    }
+    categoryList.add(item.category.name);
     let productCard = document.createElement('div');
     productCard.classList.add("product-card");
 
@@ -71,10 +104,16 @@ function displayProducts(data){
     productCard.append(productContentContainer);
     productCard.style.cursor = "pointer";
 
-    productCard.addEventListener('click', ()=>{
-      console.log(item.title);
+    productCard.addEventListener('click', () => {
+      location.assign("../pages/product.html?productId=" + item.id);
     })
+    //TODO : create addToCard(item) function
+    // function takes item --> to add to local storage
     productsGrid.append(productCard);
-
   })
 }
+
+// TODO: load Filters parameters
+/**
+ * =>
+ * */
