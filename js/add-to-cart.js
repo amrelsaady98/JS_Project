@@ -1,5 +1,5 @@
 //TODO: implement addToCart function
-function addToCart(product) {
+function addToCart(product, quantity= 1) {
   let cartList;
   let savedData = localStorage.getItem('CART_LIST');
   console.log(savedData);
@@ -10,7 +10,11 @@ function addToCart(product) {
     cartList = JSON.parse(localStorage.getItem('CART_LIST'));
   }
   console.log(cartList);
-  cartList.push(product);
+  cartList.push({
+    productId: product.id,
+    product: product,
+    quantity: quantity
+  });
   console.log(cartList);
   localStorage.setItem('CART_LIST', JSON.stringify(cartList));
 }

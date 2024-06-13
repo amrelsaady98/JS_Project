@@ -1,6 +1,6 @@
 // console.log('hello from product.html')
-let categoriesLinksContainer = document.querySelector('#nav-bottom-left');
-let categoriesCardsContainer = document.querySelector('.categoriesCardsContainer');
+let categoriesLinksContainer_nav = document.querySelector('#nav-bottom-left');
+// let categoriesCardsContainer = document.querySelector('.categoriesCardsContainer');
 
 function loadCategoriesLinks(){
   fetch('https://api.escuelajs.co/api/v1/categories')
@@ -16,7 +16,7 @@ function addCategories(categories=[]){
     newCategory.classList.add('nav-a');
     newCategory.innerText = categories[i].name;
     newCategory.setAttribute("href", "../pages/products.html?categoryName=" + categories[i].name + "&categoryId=" + categories[i].id);
-    categoriesLinksContainer.append(newCategory);
+    categoriesLinksContainer_nav.append(newCategory);
 
     /*let newCategoryCard = document.createElement('div');
     let newCategoryCardImage = document.createElement('img');
@@ -40,17 +40,34 @@ function addCategories(categories=[]){
 }
 
 loadCategoriesLinks();
+checkLoginState();
 
 // search feature
-let searchBtn = document.getElementById('nav-search-right');
-let searchInput = document.getElementById('nav-search-input');
+let searchBtn_nav = document.getElementById('nav-search-right');
+let searchInput_nav = document.getElementById('nav-search-input');
 
-searchBtn.addEventListener('click', function(){
-  window.location .assign(`../pages/products.html?q=${searchInput.value}`);
+searchBtn_nav.addEventListener('click', function(){
+  window.location .assign(`../pages/products.html?q=${searchInput_nav.value}`);
 });
-searchInput.addEventListener("keypress",
+searchInput_nav.addEventListener("keypress",
   (eventHandler) => {
     if (eventHandler.key === "Enter") {
-      window.location.assign(`./pages/products.html?q=${searchInput.value}`);
+      window.location.assign(`../pages/products.html?q=${searchInput_nav.value}`);
     }
   });
+
+//login feature
+function checkLoginState(){
+  let signInContainer_nav = document.getElementById("sign-in-container");
+  if(sessionStorage.hasOwnProperty("currentUser")){
+    console.log(JSON.parse(sessionStorage.getItem("currentUser")).name);
+    console.log(signInContainer_nav.firstChild);
+    signInContainer_nav.innerHTML = `
+
+      <span>Hello, ${JSON.parse(sessionStorage.getItem("currentUser")).name} <br/></span>
+      <span>Account and Lists</span>
+    `;
+  }else {
+    console.log("localStorage ---");
+  }
+}

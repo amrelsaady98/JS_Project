@@ -108,9 +108,9 @@ function displayProducts(data) {
     productCard.append(productContentContainer);
     productCard.style.cursor = "pointer";
 
-    /*productCard.addEventListener('click', () => {
+    productImageElement.addEventListener('click', () => {
       location.assign("../pages/product.html?productId=" + item.id);
-    })*/
+    })
     //TODO : create addToCard(item) function
 
     // function takes item --> to add to local storage
