@@ -13,7 +13,7 @@ function addToCart(product, quantity= 1) {
   cartList.push({
     productId: product.id,
     product: product,
-    quantity: quantity
+    quantity: 1
   });
   console.log(cartList);
   localStorage.setItem('CART_LIST', JSON.stringify(cartList));
